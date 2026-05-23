@@ -4,81 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSON Formatter</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #0f172a;
-        color: #e2e8f0;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-      }
-
-      header {
-        padding: 16px;
-        text-align: center;
-        background: #111827;
-        font-size: 20px;
-        font-weight: bold;
-      }
-
-      .container {
-        display: flex;
-        flex: 1;
-        gap: 10px;
-        padding: 10px;
-      }
-
-      textarea {
-        flex: 1;
-        background: #1e293b;
-        color: #e2e8f0;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        font-family: monospace;
-        font-size: 14px;
-        resize: none;
-        outline: none;
-      }
-
-      pre {
-        flex: 1;
-        background: #1e293b;
-        padding: 10px;
-        border-radius: 8px;
-        overflow: auto;
-        white-space: pre-wrap;
-        word-wrap: break-word;
-      }
-
-      .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px;
-        background: #111827;
-      }
-
-      button {
-        padding: 10px 16px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: bold;
-      }
-
-      .format {
-        background: #22c55e;
-        color: black;
-      }
-
-      .clear {
-        background: #ef4444;
-        color: white;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>JSON Formatter & Validator</header>
@@ -93,24 +19,6 @@
       <button class="clear" onclick="clearAll()">Clear</button>
     </div>
 
-    <script>
-      function formatJSON() {
-        const input = document.getElementById("input").value;
-        const output = document.getElementById("output");
-
-        try {
-          const parsed = JSON.parse(input);
-          output.textContent = JSON.stringify(parsed, null, 2);
-        } catch (e) {
-          output.textContent = "Invalid JSON: " + e.message;
-        }
-      }
-
-      function clearAll() {
-        document.getElementById("input").value = "";
-        document.getElementById("output").textContent =
-          "Formatted JSON will appear here...";
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
